@@ -1,0 +1,35 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="aiogram" />
+            <item index="1" class="java.lang.String" itemvalue="Django" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="advertisements.models.Advertisement.objects" />
+          <option value="models.News.objects" />
+          <option value="models.News.object" />
+          <option value="models.Comment.objects" />
+          <option value="djregistration.app_users.models.Profile.objects" />
+          <option value="djregistration.app_news.models.News.objects" />
+          <option value="djregistration.app_news.models.Comment.objects" />
+          <option value="djfiles.blog_app.models.Profile.objects" />
+          <option value="djfiles.blog_app.models.BlogModel.objects" />
+          <option value="djfiles.blog_app.models.ImagesModel.objects" />
+          <option value="book_app.models.Author.objects" />
+          <option value="app_users.models.Product.objects" />
+          <option value="django.db.models.fields.related.OneToOneField.first_name" />
+          <option value="diploma_backend.models.Item.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

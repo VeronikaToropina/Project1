@@ -1,9 +1,10 @@
 from instr import *
 from PyQt5.QtCore import Qt
-from PyQt5.Widgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
-from second_win import Second_Win
+from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
+from second_win import Testswin
 
-class Main_win(QWidgets):
+
+class Main_win(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -17,9 +18,9 @@ class Main_win(QWidgets):
         self.button_start0 = QPushButton(butstart0)
         self.line_fw = QVBoxLayout()
         
-        self.line_fw.addWidget(self.text_hello, alignment=AlignLeft)
-        self.line_fw.addWidget(self.text_instruction, alignment=AlignLeft)
-        self.line_fw.addWidget(self.line_fw, alignment=AlignCenter)
+        self.line_fw.addWidget(self.text_hello, alignment=Qt.AlignLeft)
+        self.line_fw.addWidget(self.text_instruction, alignment=Qt.AlignLeft)
+        self.line_fw.addWidget(self.button_start0, alignment=Qt.AlignCenter)
 
         self.setLayout(self.line_fw)
 
@@ -30,13 +31,13 @@ class Main_win(QWidgets):
 
     def next_page(self):
         self.hide()
-        self.sw = Second_Win()
+        self.sw = Testswin()
 
     def connects(self):
         self.button_start0.clicked.connect(self.next_page)
         
 
-app = QApplication()
+app = QApplication([])
 main_win = Main_win()
 app.exec_()
 

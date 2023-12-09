@@ -1,6 +1,6 @@
 from instr import *
 from PyQt5.QtCore import Qt
-from PyQt5.Widgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget
+from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget
 
 
 class Final_Win(QWidget):
@@ -16,14 +16,10 @@ class Final_Win(QWidget):
         self.line1 = QVBoxLayout()
         self.line1.addWidget(self.index_text, alignment=Qt.AlignCenter)
         self.line1.addWidget(self.result_text, alignment=Qt.AlignCenter)
+        self.setLayout(self.line1)
 
     def set_appear(self):
         self.setWindowTitle(final_window)
         self.resize(win_width, win_heights)
         self.move(win_x, win_y)
-
-
-
-
-
         
