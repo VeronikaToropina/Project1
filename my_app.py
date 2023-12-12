@@ -1,14 +1,14 @@
 from instr import *
 from PyQt5.QtCore import Qt
-from PyQt5.Widgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
+from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
 from second_win import Second_Win
 
-class Main_win(QWidgets):
+class Main_win(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.set_appear()
         self.connects()
+        self.set_appear()
         self.show()
 
     def initUI(self):
@@ -17,10 +17,10 @@ class Main_win(QWidgets):
         self.button_start0 = QPushButton(butstart0)
         self.line_fw = QVBoxLayout()
         
-        self.line_fw.addWidget(self.text_hello, alignment=AlignLeft)
-        self.line_fw.addWidget(self.text_instruction, alignment=AlignLeft)
-        self.line_fw.addWidget(self.line_fw, alignment=AlignCenter)
-
+        self.line_fw.addWidget(self.text_hello, alignment=Qt.AlignLeft)
+        self.line_fw.addWidget(self.text_instruction, alignment=Qt.AlignLeft)
+        self.line_fw.addWidget(self.button_start0, alignment=Qt.AlignCenter)
+        
         self.setLayout(self.line_fw)
 
     def set_appear(self):
