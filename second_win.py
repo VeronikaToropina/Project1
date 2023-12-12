@@ -1,10 +1,10 @@
 from instr import *
 from PyQt5.QtCore import Qt
-from PyQt5.Widgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
+from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
 from final_win import Final_Win
 
 
-class Testswin(QWidgets):
+class Testswin(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -12,12 +12,12 @@ class Testswin(QWidgets):
         self.connects()
         self.show()
 
-    def set_appear():
+    def set_appear(self):
         self.setWindowTitle(second_window)
         self.resize(win_width, win_heights)
         self.move(win_x, win_y)
 
-    def initUI():
+    def initUI(self):
         self.text_fio = QLabel(txtfio)
         self.text_age = QLabel(txtage)
         self.text_result1 = QLabel(txtresult1)
@@ -60,9 +60,9 @@ class Testswin(QWidgets):
         self.setLayout(self.gorizont_line)
 
 
-    def next_page():
+    def next_page(self):
         self.hide()
         self.fw = Final_Win()
 
-    def connects():
+    def connects(self):
         self.button_send_results.clicked.connect(self.next_page)
