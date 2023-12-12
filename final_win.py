@@ -18,6 +18,8 @@ class Final_Win(QWidget):
         self.line1.addWidget(self.result_text, alignment=Qt.AlignCenter)
         self.setLayout(self.line1)
 
+        self.setLayout(self.line1)
+
     def set_appear(self):
         self.setWindowTitle(final_window)
         self.resize(win_width, win_heights)
