@@ -17,6 +17,7 @@ class Final_Win(QWidget):
         self.line1 = QVBoxLayout()
         self.line1.addWidget(self.index_text, alignment=Qt.AlignCenter)
         self.line1.addWidget(self.result_text, alignment=Qt.AlignCenter)
+        self.setLayout(self.line1)
 
         self.setLayout(self.line1)
 

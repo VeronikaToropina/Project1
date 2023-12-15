@@ -1,7 +1,7 @@
 from instr import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
-from second_win import Testswin
+from second_win import Second_Win
 
 class Main_win(QWidget):
     def __init__(self):
@@ -30,13 +30,13 @@ class Main_win(QWidget):
 
     def next_page(self):
         self.hide()
-        self.sw = Testswin()
+        self.sw = Second_Win()
 
     def connects(self):
         self.button_start0.clicked.connect(self.next_page)
         
 
-app = QApplication([])
+app = QApplication()
 main_win = Main_win()
 app.exec_()
 
