@@ -4,6 +4,14 @@ from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPus
 from final_win import Final_Win
 from PyQt5.QtGui import QFont
 
+class Experiment():
+    def __init__(self, age, t1, t2, t3):
+        self.age = age
+        self.t1 = t1
+        self.t2 = t2
+        self.t3 = t3
+
+
 class Testswin(QWidget):
     def __init__(self):
         super().__init__()
@@ -61,8 +69,10 @@ class Testswin(QWidget):
 
 
     def next_page(self):
+        exp = Experiment(int(self.line_age.text()), int(self.line_puls0.text()), int(self.line_puls1.text()), int(self.line_puls2.text()))
+
         self.hide()
-        self.fw = Final_Win()
+        self.fw = Final_Win(exp)
 
     def connects(self):
         self.button_send_results.clicked.connect(self.next_page)
