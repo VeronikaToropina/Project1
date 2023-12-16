@@ -6,14 +6,15 @@ from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPus
 class Final_Win(QWidget):
     def __init__(self, exp):
         super().__init__()
+        self.exp = exp
         self.initUI()
         self.set_appear()
         self.show()
-        self.exp = exp
 
     def initUI(self):
-        self.result_text = QLabel(result_text_ + self.result()) 
-        self.index_text = QLabel(index_text_ + self.index)
+        result = self.results()
+        self.result_text = QLabel(result_text_ + result)
+        self.index_text = QLabel(index_text_ + str(self.index))
         self.line1 = QVBoxLayout()
         self.line1.addWidget(self.index_text, alignment=Qt.AlignCenter)
         self.line1.addWidget(self.result_text, alignment=Qt.AlignCenter)
@@ -21,14 +22,13 @@ class Final_Win(QWidget):
 
         self.setLayout(self.line1)
 
-
     def set_appear(self):
         self.setWindowTitle(final_window)
         self.resize(win_width, win_heights)
         self.move(win_x, win_y)
 
     def results(self):
-        self.index = str(((t1 + t2 + t3)*4 - 200)/10)
+        self.index = ((self.exp.t1 + self.exp.t2 + self.exp.t3)*4 - 200)/10
         if self.exp.age >= 15:
             if self.index >= 15:
                 return txt_res1

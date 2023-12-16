@@ -1,14 +1,14 @@
 from instr import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton, QWidget, QLineEdit
-from second_win import Second_Win
+from second_win import Testswin
 
 class Main_win(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.connects()
         self.set_appear()
+        self.connects()
         self.show()
 
     def initUI(self):
@@ -20,7 +20,7 @@ class Main_win(QWidget):
         self.line_fw.addWidget(self.text_hello, alignment=Qt.AlignLeft)
         self.line_fw.addWidget(self.text_instruction, alignment=Qt.AlignLeft)
         self.line_fw.addWidget(self.button_start0, alignment=Qt.AlignCenter)
-        
+
         self.setLayout(self.line_fw)
 
     def set_appear(self):
@@ -30,13 +30,13 @@ class Main_win(QWidget):
 
     def next_page(self):
         self.hide()
-        self.sw = Second_Win()
+        self.sw = Testswin()
 
     def connects(self):
         self.button_start0.clicked.connect(self.next_page)
         
 
-app = QApplication()
+app = QApplication([])
 main_win = Main_win()
 app.exec_()
 
